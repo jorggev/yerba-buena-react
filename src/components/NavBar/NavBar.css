@@ -1,0 +1,48 @@
+
+
+header {
+  background-color: #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.imgNombre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer; /* agrego esto para simular un futuro enlace que redireccione al index nuevamente*/
+}
+
+.nombreImg {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 2rem;
+}
+
+.productosUl {
+  display: flex;
+}
+.productosLi {
+  list-style: none;
+  align-content: center;
+  margin: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: white;
+}
+
+.productosLi:hover {
+  color: rgb(255, 214, 138);
+}

@@ -1,0 +1,10 @@
+.carritoImg {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+strong {
+  color: white;
+  margin-right: 10px;
+}
