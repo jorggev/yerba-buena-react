@@ -1,0 +1,47 @@
+.CardItem {
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 1rem;
+  width: 50%;
+  align-items: center;
+}
+
+.HeaderCardItem {
+  color: white;
+}
+
+.detalles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+
+.ItemInfo {
+  margin: 20px 0px;
+  color: white;
+}
+
+
+.imginfo{
+  margin: 10px;
+  border: none;
+
+}
+.ImgItem {
+  width: 80%;
+  height: 100%;
+  padding: 10px;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+.ItemFooter {
+  width: 8rem;
+  border-radius: 5px;
+  border: none;
+  background-color: whitesmoke;
+}

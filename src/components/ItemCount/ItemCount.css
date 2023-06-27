@@ -1,0 +1,16 @@
+.Counter {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.Controls {
+  display: grid;
+  justify-content: space-between;
+}
+
+.Button {
+  width: 30px;
+  background-color: #1c1c1c;
+  color: white;
+}

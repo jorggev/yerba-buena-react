@@ -1,0 +1,46 @@
+.cardProducto {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 15px;
+  text-align: center;
+  align-items: center;
+  gap: 10px;
+  background-color: whitesmoke;
+  border: 1px solid #b6b1b1;
+  border-radius: 5px;
+}
+
+.imgProducto {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cardProductoName {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.precio {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.btnProducto {
+  background-color: white;
+  color: black;
+  border-style: none;
+  padding: 5px;
+  bottom: 5px;
+  right: 5px;
+  cursor: pointer;
+  border: 1px solid #b6b1b1;
+  text-decoration: none;
+}
+
+.btnProducto:hover {
+  background-color: #1c1c1c;
+  color: white;
+  border: 1px solid #1c1c1c;
+}
