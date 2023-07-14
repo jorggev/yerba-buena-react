@@ -1,28 +1,44 @@
 /* eslint-disable react/prop-types */
-import "./ItemCount.css";
 import { useState } from "react";
+import "./ItemCount.css";
 
-const ItemCount = ({ stock, initial }) => {
-  const [quantity, setQuantity] = useState(initial);
+const ItemCount = ({ inicial, stock, funcionAgregar }) => {
+  const [contadorCantidad, setContadorCantidad] = useState(inicial);
 
-  const increment = () => {
-    if (quantity < stock) {
-      setQuantity(quantity + 1);
+  const incrementar = () => {
+    if (contadorCantidad < stock) {
+      setContadorCantidad(contadorCantidad + 1);
     }
   };
 
-  const decrement = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
+  const decrementar = () => {
+    if (contadorCantidad > inicial) {
+      setContadorCantidad(contadorCantidad - 1);
     }
   };
 
   return (
-    <div className="Counter">
-      <button onClick={decrement} className="Button"> - </button>
-      <p className="Number"> {quantity} </p>
-      <button onClick={increment} className="Button"> + </button>
-    </div>
+    <>
+      <div className="divItemCount">
+        <div className="contador">
+        <button onClick={decrementar} className="Button">
+          {" "}
+          -{" "}
+        </button>
+        <p className="Number"> {contadorCantidad} </p>
+        <button onClick={incrementar} className="Button">
+          {" "}
+          +{" "}
+        </button>
+        </div>
+
+        <button onClick={() => funcionAgregar(contadorCantidad)} className="btnAgregar">
+        {" "}
+        Agregar al carrito{" "}
+      </button>
+      </div>
+
+    </>
   );
 };
 

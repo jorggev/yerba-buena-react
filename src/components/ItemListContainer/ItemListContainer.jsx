@@ -1,36 +1,30 @@
 /* eslint-disable react/prop-types */
-/* const ItemListContainer = ({greeting}) => {
-  return (
-    <div>
-      <h1>{greeting}</h1>
-    </div>
-  );
-};
-
-export default ItemListContainer;
- */
 
 import { useState, useEffect } from "react";
-import { getProductos, getProductsByCat } from "../asynmock";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../services/config";
 import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.css";
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = ({ greeting }) => {
   const [productos, setProductos] = useState([]);
-
   const { idCategoria } = useParams();
 
   useEffect(() => {
-    const asyncFunc = idCategoria ? getProductsByCat : getProductos;
+    const misProductos = idCategoria
+      ? query(collection(db, "inventario"), where("idCat", "==", idCategoria))
+      : collection(db, "inventario");
 
-    asyncFunc(idCategoria)
-      .then((respuesta) => {
-        setProductos(respuesta);
+    getDocs(misProductos)
+      .then((res) => {
+        const nuevosProductos = res.docs.map((doc) => {
+          const data = doc.data();
+          return { id: doc.id, ...data };
+        });
+        setProductos(nuevosProductos);
       })
-      .catch((error) => {
-        console.error(error);
-      });
+      .catch((error) => console.log(error));
   }, [idCategoria]);
 
   return (

@@ -1,8 +1,6 @@
 /* eslint-disable react/prop-types */
-import "./Item.css"
+import "./Item.css";
 import { Link } from "react-router-dom";
-
-
 
 const Item = ({ id, nombre, precio, img, stock }) => {
   return (
@@ -12,9 +10,9 @@ const Item = ({ id, nombre, precio, img, stock }) => {
       <p className="precio"> $ {precio} </p>
       <p className="stock">Stock disponible: {stock}</p>
       <p> ID: {id} </p>
-      <Link to={`/Item/${id}`} className="btnProducto">Ver detalles</Link>
-
-      
+      <Link to={`/Item/${id}`} className="btnProducto">
+        Ver detalles
+      </Link>
     </div>
   );
 };

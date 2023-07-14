@@ -1,0 +1,26 @@
+.contendedorCartItem {
+  background-color: whitesmoke;
+  display: grid;
+  padding: 10px;
+  border: 1px solid #1c1c1c;
+  color: black;
+  margin: 5px;
+}
+
+.btnEliminarItem {
+  background-color: white;
+  color: black;
+  margin-top: 10px;
+  font-size: 13px;
+  padding: 4px;
+  cursor: pointer;
+  border: 1px solid #b6b1b1;
+  text-decoration: none;
+}
+
+.btnEliminarItem:hover {
+  margin-top: 10px;
+  background-color: #1c1c1c;
+  color: white;
+  border: 1px solid #b6b1b1;
+}

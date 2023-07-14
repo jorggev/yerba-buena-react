@@ -1,0 +1,90 @@
+.contendorCheckout{
+    margin: 10px;
+    padding: 30px;
+    background-color: #1c1c1c;
+    border-radius: 5px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: max-content;
+}
+
+.tittleCheckout{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.Checklist{
+    background-color: whitesmoke;
+    display: grid;
+    padding: 10px;
+    border: 1px solid #1c1c1c;
+    color: black;
+    margin: 5px;
+}
+
+.productoCheckout{
+    font-weight: bold;
+}
+
+.totalCompra{
+    margin: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.formContainer{
+    padding: 10px;
+    margin-top: 20px;
+    display: grid;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+}
+
+.inputForm{
+    color: whitesmoke;
+    text-align: center;
+    margin: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.finCheckout{
+    margin-top: 30px;
+    padding: 4px;
+    font-size: 13px;
+    border: 1px solid #b6b1b1;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.finCheckout:hover{
+    background-color: #1c1c1c;
+    color: white;
+    border: 1px solid #b6b1b1;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+.Gracias {
+    text-align: center;
+    color: whitesmoke;
+    margin-top: 50px;
+    border: 1px solid #b6b1b1;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+.Orden{
+    margin-top: 25px;
+}
+
+.Orden span{
+    color:chartreuse;
+}

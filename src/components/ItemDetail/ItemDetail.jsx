@@ -1,8 +1,38 @@
 /* eslint-disable react/prop-types */
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
+import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { CarContext } from "../../context/CarContext";
 
-const ItemDetail = ({ nombre, img, categoria, stock, descripcion, precio }) => {
+const ItemDetail = ({
+  id,
+  nombre,
+  img,
+  categoria,
+  stock,
+  descripcion,
+  precio,
+}) => {
+  const [cantidadAgregada, setCantidadAgregada] = useState(0);
+
+  const { agregarProducto } = useContext(CarContext);
+
+  // Función manejadora de la cantidad:
+  const handleAgregar = (cantidad) => {
+    setCantidadAgregada(cantidad);
+
+    // Creo un objeto con el item y la cantidad:
+    const item = {
+      id,
+      nombre,
+      precio,
+      cantidad,
+      stock,
+    };
+    agregarProducto(item, cantidad);
+  };
+
   return (
     <article className="CardItem">
       <header className="HeaderCardItem">
@@ -21,11 +51,16 @@ const ItemDetail = ({ nombre, img, categoria, stock, descripcion, precio }) => {
       </div>
 
       <footer className="ItemFooter">
-        <ItemCount
-          initial={1}
-          stock={stock}
-          onAdd={(quantity) => console.log("Cantidad agregada", quantity)}
-        />
+        {cantidadAgregada > 0 ? (
+          <div className="btnItemDetail">
+            <Link to="/" className="btnSeguirComprando"> Volver al inicio </Link>
+            <Link to="/cart" className="btnFinalizarCompra">
+              Continuar
+            </Link>
+          </div>
+        ) : (
+          <ItemCount inicial={1} stock={stock} funcionAgregar={handleAgregar} />
+        )}
       </footer>
     </article>
   );

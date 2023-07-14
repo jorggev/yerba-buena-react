@@ -1,26 +1,25 @@
 import "./ItemDetailContainer.css";
 import { useState, useEffect } from "react";
-import { getProductosById } from "../asynmock";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
+import { getDoc, doc } from "firebase/firestore";
+import { db } from "../../services/config";
 
 const ItemDetailCointainer = () => {
   const [producto, setProducto] = useState(null);
-
-  const {itemId} = useParams()
-
-/*   useEffect(() => {
-    getProductosById(1).then((respuesta) => setProducto(respuesta));
-  }, []); */
-
+  const { itemId } = useParams();
 
   useEffect(() => {
-    getProductosById(itemId)
-    .then( respuesta => {
-      setProducto(respuesta)
-    })
-    .catch(error => console.error(error))
-  }, [itemId])
+    const nuevoDoc = doc(db, "inventario", itemId);
+
+    getDoc(nuevoDoc)
+      .then((res) => {
+        const data = res.data();
+        const nuevoProducto = { id: res.id, ...data };
+        setProducto(nuevoProducto);
+      })
+      .catch((error) => console.error(error));
+  }, [itemId]);
 
   return (
     <div className="ItemDetailCointainer">

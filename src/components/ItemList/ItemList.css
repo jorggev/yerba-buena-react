@@ -1,7 +1,7 @@
-.contenedorProductos{
-    padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(4, 15%);
-    justify-content: center;
-    gap: 15px;
+.contenedorProductos {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 15%);
+  justify-content: center;
+  gap: 15px;
 }
